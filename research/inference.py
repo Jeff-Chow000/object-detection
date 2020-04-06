@@ -9,9 +9,6 @@ from PIL import Image
 from utils import visualization_utils as vis_util
 from utils import label_map_util
 
-# if tf.__version__ < '1.4.0':
-#     raise ImportError('Please upgrade your tensorflow installation to v1.4.* or later!')
-
 NUM_CLASSES = 5
 
 
@@ -26,7 +23,7 @@ def parse_args(check=True):
 if __name__ == '__main__':
     FLAGS, unparsed = parse_args()
 
-    PATH_TO_CKPT = os.path.join(FLAGS.output_dir, 'exported_graphs/frozen_inference_graph.pb')
+    PATH_TO_CKPT = os.path.join(FLAGS.output_dir, 'frozen_inference_graph.pb')
     PATH_TO_LABELS = os.path.join(FLAGS.dataset_dir, 'labels_items.txt')
 
     detection_graph = tf.Graph()
