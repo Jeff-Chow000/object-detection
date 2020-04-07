@@ -18,7 +18,7 @@ eval_dir=$output_dir/eval
 
 # config文件
 config=ssd_mobilenet_v1_pets.config
-pipeline_config_path=$output_dir/$config
+pipeline_config_path=$config
 
 echo "############ training #################"
 python ./object_detection/train.py --train_dir=$train_dir --pipeline_config_path=$pipeline_config_path
