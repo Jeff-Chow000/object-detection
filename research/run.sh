@@ -26,7 +26,7 @@ python ./object_detection/train.py --train_dir=$train_dir --pipeline_config_path
 echo "############ evaluating, this takes a while #################"
 python ./object_detection/eval.py --checkpoint_dir=$checkpoint_dir --eval_dir=$eval_dir --pipeline_config_path=$pipeline_config_path
 
-current=500  # 指定编号的模型用于生成pb文件
+current=1000  # 指定编号的模型用于生成pb文件
 
 # 导出模型
 python ./object_detection/export_inference_graph.py --input_type image_tensor --pipeline_config_path $pipeline_config_path --trained_checkpoint_prefix $train_dir/model.ckpt-$current  --output_directory $output_dir/exported_graphs
